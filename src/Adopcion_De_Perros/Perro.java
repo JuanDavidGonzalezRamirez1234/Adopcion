@@ -1,7 +1,7 @@
 package Adopcion_De_Perros;
 
 public class Perro {
-    private String placa;
+    String placa;
     private String nombre;
     private String raza;
     private int edad;

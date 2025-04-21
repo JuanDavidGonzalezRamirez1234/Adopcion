@@ -1,19 +1,19 @@
 package Adopcion_De_Perros;
 
 public class Persona extends Perro{
-    private String nombre;
-    private String apellido;
-    private int edad;
+    private String personaNombre;
+    private String personaApellido;
+    private int personaEdad;
     private String documento;
     private Perro perro1;
     private Perro perro2;
     private Perro perro3;
 
     public Persona(String nombre, String apellido, int edad, String documento) {
-        super();
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.edad = edad;
+        super(null , null , null, 0, null);
+        this.personaNombre = nombre;
+        this.personaApellido = apellido;
+        this.personaEdad = edad;
         this.documento = documento;
         this.perro1 = null;
         this.perro2 = null;
@@ -47,9 +47,9 @@ public class Persona extends Perro{
     @Override
     public String toString(){
         return "Persona {"+
-                "Nombre ="+ nombre
-                +"Apellido ="+ apellido
-                + "Edad ="  + edad +
+                "Nombre ="+ personaNombre
+                +"Apellido ="+ personaApellido
+                + "Edad ="  + personaEdad +
                 "Documento ="+ documento
                 + "Perro 1 =" + (perro1 != null ? perro1 : "Ninguno")
                 + "Perro 2 =" + (perro2 != null ? perro2 : "Ninguno")

@@ -42,9 +42,68 @@ public class Main {
                     System.out.print("Ingrese la raza");
                     String raza = scanner.nextLine();
                     System.out.print("Ingrese la edad del perro");
+                    int edad = scanner.nextInt();
+                    System.out.print("Ingrese el Tamaño del perro");
+                    String tamaño = scanner.nextLine();
 
+                    if (perro1 == null){
+                        perro1 = new Perro(placa, nombre, raza, edad, tamaño);
+
+                    } else if (perro2 == null) {
+                        perro2 = new Perro(placa, nombre, raza, edad, tamaño);
+
+                    }else if (perro3 == null){
+                        perro3 = new Perro(placa, nombre, raza, edad, tamaño);
+
+                    }else{
+                        System.out.print("No se pudo resgistrar");
+                    }
 
                 }
+                    case 3 -> {
+                        if (persona == null || (perro1 == null && perro2 == null && perro3 == null)) {
+                            System.out.println("Debe registrar una persona y al menos un perro antes de adoptar.");
+                            continue;
+                        }
+
+                        System.out.print("Ingrese placa del perro a adoptar: ");
+                        String placa = scanner.nextLine();
+                        Perro perroAdoptado = null;
+
+                        if (perro1 != null && perro1.getPlaca().equals(placa)) {
+                            perroAdoptado = perro1;
+                            perro1 = null;
+                        } else if (perro2 != null && perro2.getPlaca().equals(placa)) {
+                            perroAdoptado = perro2;
+                            perro2 = null;
+                        } else if (perro3 != null && perro3.getPlaca().equals(placa)) {
+                            perroAdoptado = perro3;
+                            perro3 = null;
+                        }
+
+                        if (perroAdoptado != null) {
+                            if (persona.adoptarPerro(perroAdoptado)) {
+                                System.out.println("¡Adopción exitosa!");
+                            } else {
+                                System.out.println("La persona ya alcanzó el límite de adopciones.");
+                            }
+                        } else {
+                            System.out.println("Perro no encontrado o ya adoptado.");
+                        }
+
+                    }
+                    case 4 ->{
+                    if (persona == null){
+                        System.out.print("Debe primero registrarse la persona");
+                        continue;
+                    }
+                    Perro PerroMasViejo = persona.perroMasGrande();
+                    if (PerroMasViejo != null){
+                        System.out.print("El perro mas viejo fue adoptado: "+ PerroMasViejo);
+
+
+                    }
+                    }
 
             }
         }
