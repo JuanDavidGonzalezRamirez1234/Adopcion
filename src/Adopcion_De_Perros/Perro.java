@@ -1,7 +1,7 @@
 package Adopcion_De_Perros;
 
 public class Perro {
-    String placa;
+    private String placa;
     private String nombre;
     private String raza;
     private int edad;
@@ -58,7 +58,7 @@ public class Perro {
     }
     @Override
     public String toString(){
-        return "Perro {"+ "Placa ="+ placa +"Nombre ="+ nombre + "Raza ="  + raza + "Edad ="+ edad + "tamaño =" + tamaño +'}';
+        return "Perro {"+ " \n Placa  \n " + placa +" \n Nombre  \n " + nombre + " \n Raza  \n "  + raza + " \n Edad  \n " + edad + " \n Tamaño  \n " + tamaño +'}';
 
     }
 }
